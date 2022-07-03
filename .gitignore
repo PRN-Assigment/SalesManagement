@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/ProjectSln/.vs/ProjectSln/v17
+/ProjectSln/BusinessObject/obj
+/ProjectSln/DataAccess/obj
+/ProjectSln/SalesWinApp/obj
