@@ -15,7 +15,7 @@ namespace SalesWinApp
             ApplicationConfiguration.Initialize();
             MemberRepository memberRepository = new MemberRepository();
             memberRepository.InitAdmin();
-            Application.Run( new frmMember());
+            Application.Run( new frmLogin());
         }
     }
 }
