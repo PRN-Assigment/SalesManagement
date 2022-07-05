@@ -20,6 +20,7 @@ namespace SalesWinApp
         private OrderRepository orderDao = new OrderRepository();
         private OrderDetailRepository orderDetailDAO = new OrderDetailRepository();
         string function = null;
+        private DateTime tmp;
 
         public frmOrder(TblMember member)
         {
@@ -172,13 +173,22 @@ namespace SalesWinApp
                 if (cboMemberID.Text.Length < 0) throw new Exception("No member");
                 if (txtQuantity.Text.Length < 0) throw new Exception("Empty Quantity");
                 if (txtUnitPrice.Text.Length < 0) throw new Exception("Empty Price");
-
+                
                     order.MemberId = int.Parse(cboMemberID.SelectedValue.ToString());
                     try
                 {
                     order.OrderDate = DateTime.Parse(orderDate.Text.Trim());
                     order.ShippedDate = DateTime.Parse(shippedDate.Text.Trim());
                     order.RequiredDate = DateTime.Parse(requireDate.Text.Trim());
+                    if (order.OrderDate > order.RequiredDate)
+                    {
+                        tmp = order.OrderDate;
+
+                        order.OrderDate = (DateTime)order.RequiredDate;
+
+                        order.RequiredDate = tmp;
+
+                    }
                 } catch(Exception ex)
                 {
 

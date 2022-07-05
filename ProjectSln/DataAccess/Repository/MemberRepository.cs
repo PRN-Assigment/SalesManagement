@@ -31,7 +31,10 @@ namespace DataAccess.Repository
             context.SaveChanges();
 
         }
-
+        public List<TblMember> GetList(TblMember member)
+        {
+            return context.TblMembers.ToList();
+        }
         public List<TblMember> GetList()
         {
             return context.TblMembers.ToList();

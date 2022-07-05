@@ -43,7 +43,7 @@ namespace SalesWinApp
             }
             else
             {
-                dgvMember.DataSource = loginMember;
+                loadMemberLogin();
                 tool(false);
                 btnEdit.Enabled = false;
                 btnSave.Enabled = false;
@@ -52,7 +52,13 @@ namespace SalesWinApp
         }
 
 
+        private void loadMemberLogin()
+        {
+            
+            TblMember member = memberDAO.GetRowByID(loginMember.MemberId);
+            dgvMember.DataSource = memberDAO.GetList(member);
 
+        }
         private void loadMember()
         {
             dgvMember.DataSource = memberDAO.GetList();
@@ -184,6 +190,13 @@ namespace SalesWinApp
         {
             try
             {
+                
+                    if (loginMember.Email != "admin@fstore.com")
+                    {
+                        throw new Exception("Bạn không có quyền admin");
+                    }
+
+                
                 int memberId = int.Parse(txtMemberId.Text.Trim());
 
                 TblMember member = memberDAO.GetRowByID(memberId);

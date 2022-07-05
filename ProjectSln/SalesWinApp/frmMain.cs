@@ -46,20 +46,9 @@ namespace SalesWinApp
 
         private void QLTVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                if (loginMember.Email != "admin@fstore.com")
-                {
-                    throw new Exception("Bạn không có quyền admin");
-                }
-                Form frmmember = new frmMember(loginMember);
-                frmmember.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            Form frmmember = new frmMember(loginMember);
+            frmmember.ShowDialog();
+            
 
         }
         private void QLHDToolStripMenuItem_Click(object sender, EventArgs e)
