@@ -53,8 +53,8 @@ namespace SalesWinApp
                 {
                     throw new Exception("Bạn không có quyền admin");
                 }
-                Form frmproduct = new frmProduct(loginMember);
-                frmproduct.ShowDialog();
+                Form frmmember = new frmMember(loginMember);
+                frmmember.ShowDialog();
             }
             catch (Exception ex)
             {
