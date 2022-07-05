@@ -117,9 +117,19 @@ namespace SalesWinApp
             }
         }
 
+        private void clear()
+        {
+            txtPassword.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtCompanyName.Text= string.Empty;
+            txtCountry.Text = string.Empty;
+            txtCity.Text = string.Empty;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             tool(true);
+            clear();
             btnSave.Enabled = true;
             txtMemberId.Text = "Auto Generated";
             txtMemberId.ReadOnly = true;
