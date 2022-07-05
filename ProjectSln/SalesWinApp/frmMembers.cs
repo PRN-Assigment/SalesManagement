@@ -121,6 +121,11 @@ namespace SalesWinApp
             Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             try
             {
+                if (txtPassword.TextLength < 6)
+                {
+                    throw new Exception("Mật Khẩu ít nhất 6 kí tự");
+                }
+                
                 if (loginMember.Email == txtEmail.Text.Trim())
                 {
                     throw new Exception("Không thể Edit Admin.");
