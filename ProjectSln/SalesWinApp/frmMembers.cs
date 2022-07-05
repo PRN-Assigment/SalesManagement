@@ -43,12 +43,25 @@ namespace SalesWinApp
             }
             else
             {
-                loadMemberLogin();
+                loadLoginMember();
+
                 tool(false);
-                btnEdit.Enabled = false;
-                btnSave.Enabled = false;
+                btnEdit.Enabled = true;
+                btnSave.Enabled = true;
                 btnDelete.Enabled = false;
             }
+        }
+
+        public void loadLoginMember()
+        {
+            TblMember member = memberDAO.GetRowByID(loginMember.MemberId);
+            txtMemberId.Text = member.MemberId.ToString();
+            txtEmail.Text = member.Email;
+            txtPassword.Text = member.Password;
+            txtCompanyName.Text = member.CompanyName;
+            txtCity.Text = member.City;
+            txtCountry.Text = member.Country;
+
         }
 
 
@@ -124,65 +137,118 @@ namespace SalesWinApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            try
+            if (loginMember.Email == "admin@fstore.com")
             {
-                if (txtPassword.TextLength < 6)
-                {
-                    throw new Exception("Mật Khẩu ít nhất 6 kí tự");
-                }
-                
-                if (loginMember.Email == txtEmail.Text.Trim())
-                {
-                    throw new Exception("Không thể Edit Admin.");
-                }
-                if (!emailRegex.IsMatch(txtEmail.Text.Trim()))
-                {
-                    throw new Exception("Email phải khớp với mẫu example@example.com");
-                }
-                TblMember member = new TblMember();
+                Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                 try
                 {
-                    member.MemberId = int.Parse(txtMemberId.Text.Trim());
+                    if (loginMember.Email == txtEmail.Text.Trim())
+                    {
+                        throw new Exception("Không thể Edit Admin.");
+                    }
+                    if (!emailRegex.IsMatch(txtEmail.Text.Trim()))
+                    {
+                        throw new Exception("Email phải khớp với mẫu example@example.com");
+                    }
+                    TblMember member = new TblMember();
+                    try
+                    {
+                        member.MemberId = int.Parse(txtMemberId.Text.Trim());
+                    }
+                    catch (Exception ex)
+                    {
+                        member.MemberId = 0;
+                    }
+
+                    member.Password = txtPassword.Text.Trim();
+                    member.Email = txtEmail.Text.Trim();
+                    member.CompanyName = txtCompanyName.Text.Trim();
+                    member.City = txtCity.Text.Trim();
+                    member.Country = txtCountry.Text.Trim();
+
+                    switch (function)
+                    {
+                        case "Add":
+                            {
+                                if (memberDAO.getRow(txtEmail.Text) != null)
+                                {
+                                    throw new Exception("Duplicate Email!");
+                                }
+                                memberDAO.Insert(member);
+                                loadMember();
+                                MessageBox.Show("Thêm thành công", "Thông báo");
+                                break;
+                            }
+                        case "Edit":
+                            {
+
+                                memberDAO.Update(member);
+                                loadMember();
+                                MessageBox.Show("Sửa thành công", "Thông báo");
+                                break;
+                            }
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    member.MemberId = 0;
+                    MessageBox.Show(ex.Message, "Thông báo");
                 }
-
-                member.Password = txtPassword.Text.Trim();
-                member.Email = txtEmail.Text.Trim();
-                member.CompanyName = txtCompanyName.Text.Trim();
-                member.City = txtCity.Text.Trim();
-                member.Country = txtCountry.Text.Trim();
-
-                switch (function)
-                {
-                    case "Add":
-                        {
-                            if (memberDAO.getRow(txtEmail.Text) != null)
-                            {
-                                throw new Exception("Duplicate Email!");
-                            }
-                            memberDAO.Insert(member);
-                            loadMember();
-                            MessageBox.Show("Thêm thành công", "Thông báo");
-                            break;
-                        }
-                    case "Edit":
-                        {
-
-                            memberDAO.Update(member);
-                            loadMember();
-                            MessageBox.Show("Sửa thành công", "Thông báo");
-                            break;
-                        }
-                }
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Thông báo");
+                Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                try
+                {
+                    if (!emailRegex.IsMatch(txtEmail.Text.Trim()))
+                    {
+                        throw new Exception("Email phải khớp với mẫu example@example.com");
+                    }
+                    TblMember member = new TblMember();
+                    try
+                    {
+                        member.MemberId = int.Parse(txtMemberId.Text.Trim());
+                    }
+                    catch (Exception ex)
+                    {
+                        member.MemberId = 0;
+                    }
+
+                    member.Password = txtPassword.Text.Trim();
+                    member.Email = txtEmail.Text.Trim();
+                    member.CompanyName = txtCompanyName.Text.Trim();
+                    member.City = txtCity.Text.Trim();
+                    member.Country = txtCountry.Text.Trim();
+
+                    switch (function)
+                    {
+                        case "Add":
+                            {
+                                if (memberDAO.getRow(txtEmail.Text) != null)
+                                {
+                                    throw new Exception("Duplicate Email!");
+                                }
+                                memberDAO.Insert(member);
+
+                                MessageBox.Show("Thêm thành công", "Thông báo");
+                                break;
+                            }
+                        case "Edit":
+                            {
+
+                                memberDAO.Update(member);
+
+                                MessageBox.Show("Sửa thành công", "Thông báo");
+                                break;
+                            }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo");
+                }
+
             }
         }
 
