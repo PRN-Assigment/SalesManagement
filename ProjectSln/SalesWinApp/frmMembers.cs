@@ -65,13 +65,7 @@ namespace SalesWinApp
         }
 
 
-        private void loadMemberLogin()
-        {
-            
-            TblMember member = memberDAO.GetRowByID(loginMember.MemberId);
-            dgvMember.DataSource = memberDAO.GetList(member);
-
-        }
+        
         private void loadMember()
         {
             dgvMember.DataSource = memberDAO.GetList();
@@ -149,9 +143,14 @@ namespace SalesWinApp
         {
             if (loginMember.Email == "admin@fstore.com")
             {
+
                 Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                 try
                 {
+                    if (txtPassword.TextLength < 6)
+                    {
+                        throw new Exception("Mật Khẩu ít nhất 6 kí tự");
+                    }
                     if (loginMember.Email == txtEmail.Text.Trim())
                     {
                         throw new Exception("Không thể Edit Admin.");
@@ -210,6 +209,10 @@ namespace SalesWinApp
                 Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                 try
                 {
+                    if (txtPassword.TextLength < 6)
+                    {
+                        throw new Exception("Mật Khẩu ít nhất 6 kí tự");
+                    }
                     if (!emailRegex.IsMatch(txtEmail.Text.Trim()))
                     {
                         throw new Exception("Email phải khớp với mẫu example@example.com");
@@ -278,7 +281,7 @@ namespace SalesWinApp
                 TblMember member = memberDAO.GetRowByID(memberId);
                 if (member.Email == loginMember.Email)
                 {
-                    throw new Exception("Không thể xóa Admin");
+                    throw new Exception("Đang đăng nhập");
                 }
 
                 memberDAO.Delete(member);
