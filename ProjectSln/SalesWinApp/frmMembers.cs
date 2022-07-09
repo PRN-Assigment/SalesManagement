@@ -159,6 +159,18 @@ namespace SalesWinApp
                     {
                         throw new Exception("Email phải khớp với mẫu example@example.com");
                     }
+                    if(txtCompanyName.TextLength < 1)
+                    {
+                        throw new Exception("Company name không được để trống");
+                    }
+                    if(txtCountry.TextLength < 1)
+                    {
+                        throw new Exception("Country không được để trống");
+                    }
+                    if(txtCity.TextLength < 1)
+                    {
+                        throw new Exception("City không được để trống");
+                    }
                     TblMember member = new TblMember();
                     try
                     {
