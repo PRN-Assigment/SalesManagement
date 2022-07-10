@@ -60,8 +60,14 @@ namespace SalesWinApp
         private void đângXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmlogin = new frmLogin();
+            this.Visible = false;
             frmlogin.ShowDialog();
             
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

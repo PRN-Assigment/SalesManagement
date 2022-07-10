@@ -43,13 +43,20 @@ namespace SalesWinApp
                     throw new Exception("Mật khẩu không chính xác");
                 }
                 Form frmmain = new frmMain(member);
+                this.Visible = false;
                 frmmain.ShowDialog();
+                
+                
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,"Thông Báo");
             }
         }
+
+        
 
         private void btReset_Click(object sender, EventArgs e)
         {
