@@ -301,7 +301,7 @@ namespace SalesWinApp
                     throw new Exception("Chưa chọn đúng thông tin");
                 }
                 cboProductID.Text = dgvDetail.Rows[rowindex].Cells["ProductId"].Value.ToString();
-                txtUnitPrice.Text = dgvDetail.Rows[rowindex].Cells["Unit Price"].Value.ToString();
+                txtUnitPrice.Text = dgvDetail.Rows[rowindex].Cells["UnitPrice"].Value.ToString();
                 txtQuantity.Text = dgvDetail.Rows[rowindex].Cells["Quantity"].Value.ToString();
                 txtDiscount.Text = dgvDetail.Rows[rowindex].Cells["Discount"].Value.ToString();
             }
@@ -328,6 +328,28 @@ namespace SalesWinApp
                 MessageBox.Show("Error");
             }
             
+        }
+
+        private void dgvDetail_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                int rowindex = e.RowIndex;
+                if (rowindex < 0 || rowindex >= dgvDetail.Rows.Count)
+                {
+                    throw new Exception("Chưa chọn đúng thông tin");
+                }
+                cboProductID.Text = dgvDetail.Rows[rowindex].Cells["ProductId"].Value.ToString();
+                txtUnitPrice.Text = dgvDetail.Rows[rowindex].Cells["UnitPrice"].Value.ToString();
+                txtQuantity.Text = dgvDetail.Rows[rowindex].Cells["Quantity"].Value.ToString();
+                txtDiscount.Text = dgvDetail.Rows[rowindex].Cells["Discount"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+
         }
     }
 }
