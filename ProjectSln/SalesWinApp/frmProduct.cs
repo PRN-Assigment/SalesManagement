@@ -55,11 +55,22 @@ namespace SalesWinApp
 
         }
 
+        private void clear()
+        {
+            txtProductID.Text = String.Empty;
+            txtCategoryID.Text = string.Empty;
+            txtProductName.Text = string.Empty;
+            txtWeight.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+            txtStock.Text = string.Empty;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             tool(true);
             function = "Add";
             btnSave.Enabled = true;
+            clear();
             txtProductID.ReadOnly = true;
             txtProductID.Text = "Auto generated";
         }

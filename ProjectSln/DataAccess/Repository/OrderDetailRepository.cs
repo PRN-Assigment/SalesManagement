@@ -36,6 +36,12 @@ namespace DataAccess.Repository
             return order;
         }
 
+        public TblOrderDetail getRow(int odID)
+        {
+            TblOrderDetail orders = context.TblOrderDetails.Where(m => m.OrderId == odID).FirstOrDefault();
+            return orders;
+        }
+
         public void Insert(TblOrderDetail od)
         {
             if (od != null)
@@ -57,7 +63,17 @@ namespace DataAccess.Repository
 
         public void Update(TblOrderDetail od)
         {
-            throw new NotImplementedException();
+            int id = od.OrderId;
+            TblOrderDetail newDetail = getRow(id);
+            if(newDetail != null)
+            {
+                newDetail.OrderId = od.OrderId;
+                newDetail.ProductId = od.ProductId;
+                newDetail.UnitPrice = od.UnitPrice;
+                newDetail.Quantity = od.Quantity;
+                newDetail.Discount = od.Discount;
+                context.SaveChanges();
+            }
         }
 
         TblOrderDetail IOrderDetailRepository.getRow(int oddID)

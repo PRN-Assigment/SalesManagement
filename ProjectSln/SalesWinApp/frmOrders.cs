@@ -319,6 +319,10 @@ namespace SalesWinApp
               int id = int.Parse(txtOrderID.Text);
               orderDao.Delete(id);
               orderDetailDAO.Delete(id);
+              loadOrder();
+              loadOrderDetail(id);
+                MessageBox.Show("Xoa thanh cong");
+
             } catch (Exception ex)
             {
                 MessageBox.Show("Error");
