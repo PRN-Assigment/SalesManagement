@@ -141,7 +141,7 @@ namespace SalesWinApp
         {
             try
             {
-                loadOrder();
+                
                 loadOrderReport(DateTime.Parse(orderDate.Text.Trim()), DateTime.Parse(requireDate.Text.Trim()));
                 lbStatDate.Enabled = false;
                 lbEndDate.Enabled = false;
