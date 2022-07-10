@@ -56,5 +56,12 @@ namespace SalesWinApp
             Form frmorder = new frmOrder(loginMember);
             frmorder.ShowDialog();
         }
+
+        private void đângXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmlogin = new frmLogin();
+            frmlogin.ShowDialog();
+            
+        }
     }
 }

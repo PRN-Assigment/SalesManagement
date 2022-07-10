@@ -34,9 +34,9 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLSPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLTVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLHDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelHoten = new System.Windows.Forms.ToolStripStatusLabel();
-            this.QLHDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,8 +51,8 @@
             this.QLHDToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(869, 24);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(993, 30);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -62,70 +62,71 @@
             this.đângXuấtToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // đângXuấtToolStripMenuItem
             // 
             this.đângXuấtToolStripMenuItem.Name = "đângXuấtToolStripMenuItem";
-            this.đângXuấtToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.đângXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đângXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đângXuấtToolStripMenuItem.Click += new System.EventHandler(this.đângXuấtToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // QLSPToolStripMenuItem
             // 
             this.QLSPToolStripMenuItem.Name = "QLSPToolStripMenuItem";
-            this.QLSPToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.QLSPToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.QLSPToolStripMenuItem.Text = "Quản lý sản phẩm";
             this.QLSPToolStripMenuItem.Click += new System.EventHandler(this.QLSPToolStripMenuItem_Click);
             // 
             // QLTVToolStripMenuItem
             // 
             this.QLTVToolStripMenuItem.Name = "QLTVToolStripMenuItem";
-            this.QLTVToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.QLTVToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.QLTVToolStripMenuItem.Text = "Quản lý Thành Viên ";
             this.QLTVToolStripMenuItem.Click += new System.EventHandler(this.QLTVToolStripMenuItem_Click);
+            // 
+            // QLHDToolStripMenuItem
+            // 
+            this.QLHDToolStripMenuItem.Name = "QLHDToolStripMenuItem";
+            this.QLHDToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.QLHDToolStripMenuItem.Text = "Quản Lý Hóa Đơn ";
+            this.QLHDToolStripMenuItem.Click += new System.EventHandler(this.QLHDToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelHoten});
-            this.statusStrip.Location = new System.Drawing.Point(0, 442);
+            this.statusStrip.Location = new System.Drawing.Point(0, 593);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.statusStrip.Size = new System.Drawing.Size(869, 22);
+            this.statusStrip.Size = new System.Drawing.Size(993, 26);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip";
             // 
             // toolStripStatusLabelHoten
             // 
             this.toolStripStatusLabelHoten.Name = "toolStripStatusLabelHoten";
-            this.toolStripStatusLabelHoten.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabelHoten.Size = new System.Drawing.Size(46, 20);
             this.toolStripStatusLabelHoten.Text = "Email";
             // 
-            // QLHDToolStripMenuItem
+            // frmMain
             // 
-            this.QLHDToolStripMenuItem.Name = "QLHDToolStripMenuItem";
-            this.QLHDToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.QLHDToolStripMenuItem.Text = "Quản Lý Hóa Đơn ";
-            this.QLHDToolStripMenuItem.Click += new System.EventHandler(this.QLHDToolStripMenuItem_Click);
-            // 
-            // frmMainNotMDI
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(869, 464);
+            this.ClientSize = new System.Drawing.Size(993, 619);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "frmMainNotMDI";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);

@@ -50,5 +50,11 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message,"Thông Báo");
             }
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            tbMatKhau.Text = string.Empty;
+            tbtenDangNhap.Text = string.Empty;
+        }
     }
 }

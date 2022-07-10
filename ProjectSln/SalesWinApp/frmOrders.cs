@@ -94,11 +94,20 @@ namespace SalesWinApp
             dgvDetail.DataSource = orderDetailDAO.getListByID(orderID);
         }
 
-
+        private void clear()
+        {
+            txtDiscount.Text = string.Empty;
+            txtOrderID.Text = string.Empty;
+            txtFreight.Text = string.Empty;
+            txtQuantity.Text = string.Empty;
+            txtUnitPrice.Text = string.Empty;
+            
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             tool(true);
+            clear();
             function = "Add";
             btnSave.Enabled = true;
             txtOrderID.Text = "Auto Generated";
@@ -191,7 +200,7 @@ namespace SalesWinApp
                     }
                 } catch(Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message, "Thời gian đặt và kết thúc không đúng");
                 }
                     
                 try
