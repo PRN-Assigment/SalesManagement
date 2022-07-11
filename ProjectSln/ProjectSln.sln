@@ -5,22 +5,18 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessObject", "BusinessObject", "{A03E78FA-6DBF-434C-8B19-528AD690B26D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{F5FF2359-965E-4379-A6C7-FB8563151E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{F5FF2359-965E-4379-A6C7-FB8563151E2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{19D01CF6-DA85-4E36-8E92-01E1EFFF85DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{939D95F4-374B-4552-89F2-0E4AAF836472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{939D95F4-374B-4552-89F2-0E4AAF836472}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SalesWinApp", "SalesWinApp", "{C1B9EF53-3099-4752-93A9-FAEC350CB013}"
 	ProjectSection(SolutionItems) = preProject
 		appsettings.json = appsettings.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWinApp", "SalesWinApp\SalesWinApp.csproj", "{68710642-322C-4941-BBF1-FDECBE272132}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{933B01B9-952A-4BF4-A113-F0A7CEA236EE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IRepository", "IRepository", "{9D6E0425-DEFC-4690-A112-362E69CB519D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesWinApp", "SalesWinApp\SalesWinApp.csproj", "{68710642-322C-4941-BBF1-FDECBE272132}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,8 +44,6 @@ Global
 		{F5FF2359-965E-4379-A6C7-FB8563151E2E} = {A03E78FA-6DBF-434C-8B19-528AD690B26D}
 		{939D95F4-374B-4552-89F2-0E4AAF836472} = {19D01CF6-DA85-4E36-8E92-01E1EFFF85DB}
 		{68710642-322C-4941-BBF1-FDECBE272132} = {C1B9EF53-3099-4752-93A9-FAEC350CB013}
-		{933B01B9-952A-4BF4-A113-F0A7CEA236EE} = {19D01CF6-DA85-4E36-8E92-01E1EFFF85DB}
-		{9D6E0425-DEFC-4690-A112-362E69CB519D} = {19D01CF6-DA85-4E36-8E92-01E1EFFF85DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35D5D9E6-2C3F-40FE-BC96-A1D208FB43B4}
